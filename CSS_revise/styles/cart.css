@@ -1,0 +1,39 @@
+body {
+    background-color: bisque;
+
+    max-width: 1270px;
+    margin: 0 auto;
+
+}
+
+.card {
+    width: 200px;
+
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 10px 10px 10px rgb(58, 56, 56);
+}
+
+.card img {
+    width: 100%;
+}
+
+.card button {
+    background-color: aqua;
+    padding: 5px 5px;
+
+    border-radius: 10px;
+}
+
+.cart-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    text-align: left;
+
+}
+
+.cart-section {
+    text-align: center;
+}

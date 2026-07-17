@@ -5,10 +5,10 @@ import { fadeInUp } from '../../lib/motion'
 import { contactLinks } from '../../data/ojProfiles'
 
 const timeline = [
-  { year: '2024', text: 'Upwork Freelancer (AI/ML)' },
-  { year: '2024', text: 'IEEE Research (depression detection)' },
-  { year: '2023', text: 'CSE @ Netrakona University' },
-  { year: '2023', text: 'First AI project (NLP)' },
+  { year: '2026', text: 'Systematic review on Agentic AI standardization (MCP)' },
+  { year: '2026', text: 'Multimodal biometric attendance thesis — 0.984 AUC' },
+  { year: '2025', text: 'DocMind AI — enterprise RAG platform shipped' },
+  { year: '2023', text: 'CSE @ Netrokona University' },
   { year: '2022', text: 'Competitive programming start' },
 ]
 
@@ -38,8 +38,8 @@ export function About() {
             </div>
             <div>
               <h3 className="text-xl font-bold text-text-primary">Mursalin Hawlader</h3>
-              <p className="text-text-secondary text-sm mt-1">CSE @ Netrakona University</p>
-              <p className="text-text-muted text-sm">Netrakona, Bangladesh</p>
+              <p className="text-text-secondary text-sm mt-1">CSE @ Netrokona University</p>
+              <p className="text-text-muted text-sm">Netrokona, Bangladesh</p>
             </div>
             <div className="flex flex-col gap-2 mt-2">
               {links.map(({ label, href, icon: Icon }) => (
@@ -57,11 +57,12 @@ export function About() {
             </div>
 
             <p className="text-text-secondary text-sm leading-relaxed mt-4">
-              CSE student at Netrakona University, building AI systems that solve real problems.
-              I work at the intersection of ML research, conversational AI, and full-stack
-              engineering. Currently freelancing on Upwork (AI automation + full-stack),
-              co-authoring a multimodal depression detection paper targeting IEEE Access, and
-              building Sia — an AI-powered rental aggregation platform.
+              CSE student at Netrokona University, building AI systems that solve real problems.
+              I work at the intersection of ML research and applied AI engineering — from
+              retrieval-augmented generation and agentic AI systems to deep learning research
+              in multimodal biometrics. Currently authoring a systematic review on Agentic AI
+              standardization, having completed a thesis on confidence-gated multimodal fusion
+              and shipped DocMind AI, a production RAG platform.
             </p>
           </motion.div>
 

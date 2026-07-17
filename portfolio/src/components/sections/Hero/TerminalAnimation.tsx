@@ -4,9 +4,9 @@ const terminalScript: ScriptLine[] = [
   { type: 'cmd', text: 'whoami' },
   { type: 'out', text: 'Mursalin Hawlader — AI Engineer & CS Researcher' },
   { type: 'cmd', text: 'cat current_focus.txt' },
-  { type: 'out', text: 'IEEE paper: multimodal depression detection' },
-  { type: 'out', text: 'Sia: AI-powered rental aggregation platform' },
-  { type: 'out', text: 'Upwork: AI automation & full-stack projects' },
+  { type: 'out', text: 'DocMind AI: Enterprise RAG platform' },
+  { type: 'out', text: 'Systematic review: Agentic AI & MCP standardization' },
+  { type: 'out', text: 'Thesis: multimodal biometric fusion (0.984 AUC)' },
   { type: 'cmd', text: './hire_me.sh' },
   { type: 'cursor' },
 ]

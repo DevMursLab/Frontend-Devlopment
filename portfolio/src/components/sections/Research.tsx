@@ -5,9 +5,9 @@ import { research, researchStats } from '../../data/research'
 import { fadeInUp } from '../../lib/motion'
 
 const pipeline = [
-  { title: 'Face Input', lines: ['FER2013', 'OpenCV'] },
-  { title: 'Audio Input', lines: ['DAIC-WOZ', 'Whisper'] },
-  { title: 'Fusion + Output', lines: ['Binary: Dep/No', 'Bengali Focus'] },
+  { title: 'Face Input', lines: ['LFW', 'Face Verification'] },
+  { title: 'Fingerprint Input', lines: ['SOCOFing', 'FVC2002/2004'] },
+  { title: 'Gated Fusion + Output', lines: ['Confidence-Gated', 'Transformer Fusion'] },
 ]
 
 export function Research() {
@@ -28,7 +28,7 @@ export function Research() {
               <FileText size={16} /> RESEARCH
             </span>
             <span className="font-mono text-xs px-3 py-1 rounded-full border border-accent-blue/40 bg-accent-blue/10 text-accent-blue">
-              IEEE Access
+              Thesis
             </span>
           </div>
 

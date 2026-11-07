@@ -23,6 +23,7 @@ const achievements = [
 const references = [
   { name: 'Md Shovon', role: 'Lecturer, Department of CSE · B.Sc. Thesis Supervisor', email: 'mdshovon@neu.ac.bd' },
   { name: 'Farida Siddiqi Prity', role: 'Lecturer, Department of CSE · Research Collaborator', email: 'prity@neu.ac.bd' },
+  { name: 'Abdullah Al Shiam', role: 'Assistant Professor, Department of CSE · Netrokona University · On Leave', email: 'shiam.cse@neu.ac.bd', profile: 'https://cse.neu.ac.bd/faculty/abdullah-al-shiam/' },
 ]
 
 export function Academics() {
@@ -32,14 +33,7 @@ export function Academics() {
         <SectionHeader index="02" title="Academic strength" subtitle="A sustained upward trajectory, research-focused coursework, and proven performance under competition pressure." />
 
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={staggerContainer} className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {results.map((result, index) => (
-            <motion.div key={result.label} variants={fadeInUp} className={`relative overflow-hidden rounded-2xl border p-6 ${index === 2 ? 'border-accent-blue/50 bg-gradient-to-br from-accent-blue/20 to-bg-card shadow-[0_0_40px_rgba(59,130,246,0.12)]' : 'border-white/10 bg-bg-card'}`}>
-              <p className="font-mono text-xs uppercase tracking-wider text-text-muted">{result.label}</p>
-              <p className="text-4xl font-bold text-text-primary mt-3">{result.value}</p>
-              <p className="text-sm text-text-secondary mt-2">{result.note}</p>
-              {index === 2 && <span className="absolute right-4 top-4 font-mono text-[10px] uppercase tracking-wider text-accent-blue">Latest</span>}
-            </motion.div>
-          ))}
+          {results.map((result, index) => <motion.div key={result.label} variants={fadeInUp} className={`relative overflow-hidden rounded-2xl border p-6 ${index === 2 ? 'border-accent-blue/50 bg-gradient-to-br from-accent-blue/20 to-bg-card shadow-[0_0_40px_rgba(59,130,246,0.12)]' : 'border-white/10 bg-bg-card'}`}><p className="font-mono text-xs uppercase tracking-wider text-text-muted">{result.label}</p><p className="text-4xl font-bold text-text-primary mt-3">{result.value}</p><p className="text-sm text-text-secondary mt-2">{result.note}</p>{index === 2 && <span className="absolute right-4 top-4 font-mono text-[10px] uppercase tracking-wider text-accent-blue">Latest</span>}</motion.div>)}
         </motion.div>
 
         <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-6 mt-6">
@@ -51,14 +45,15 @@ export function Academics() {
           </motion.div>
 
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} className="rounded-2xl border border-amber-400/20 bg-gradient-to-br from-amber-400/8 to-bg-card p-6 md:p-8">
-            <div className="flex items-center gap-3"><Trophy className="text-amber-300" /><h3 className="text-xl font-bold text-text-primary">Awards & distinctions</h3></div>
+            <div className="flex items-center gap-3"><Trophy className="text-amber-300" /><h3 className="text-xl font-bold text-text-primary">Competitive distinction & awards</h3></div>
+            <p className="text-sm text-text-secondary leading-relaxed mt-4">Competitive programming is the operating system behind my engineering work: I decompose ambiguous problems, reason about constraints, and deliver correct solutions under pressure.</p>
             <div className="mt-6 space-y-4">{achievements.map((item) => <div key={item.title} className="flex gap-3"><Award size={17} className="shrink-0 text-amber-300 mt-0.5" /><div>{item.href ? <a href={item.href} target="_blank" rel="noreferrer" className="font-bold text-text-primary hover:text-amber-200 transition-colors">{item.title} ↗</a> : <p className="font-bold text-text-primary">{item.title}</p>}<p className="text-sm text-text-secondary mt-1">{item.detail}</p></div></div>)}</div>
           </motion.div>
         </div>
 
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp} className="mt-6 rounded-2xl border border-white/10 bg-bg-card p-6 md:p-8">
           <p className="font-mono text-xs uppercase tracking-wider text-accent-blue">Academic references</p>
-          <div className="grid md:grid-cols-2 gap-5 mt-5">{references.map((reference) => <div key={reference.email} className="rounded-xl border border-white/8 bg-bg-void p-5"><p className="font-bold text-text-primary">{reference.name}</p><p className="text-sm text-text-secondary mt-1">{reference.role}</p><a href={`mailto:${reference.email}`} className="inline-flex items-center gap-2 font-mono text-xs text-accent-blue mt-3"><Mail size={14} /> {reference.email}</a></div>)}</div>
+          <div className="grid md:grid-cols-3 gap-5 mt-5">{references.map((reference) => <div key={reference.email} className="rounded-xl border border-white/8 bg-bg-void p-5">{reference.profile ? <a href={reference.profile} target="_blank" rel="noreferrer" className="font-bold text-text-primary hover:text-accent-blue transition-colors">{reference.name} ↗</a> : <p className="font-bold text-text-primary">{reference.name}</p>}<p className="text-sm text-text-secondary mt-1">{reference.role}</p><a href={`mailto:${reference.email}`} className="inline-flex items-center gap-2 font-mono text-xs text-accent-blue mt-3"><Mail size={14} /> {reference.email}</a></div>)}</div>
         </motion.div>
       </div>
     </section>

@@ -8,7 +8,7 @@ export function Contact() {
   return (
     <section id="contact" className="px-6 py-24 bg-bg-void">
       <div className="max-w-6xl mx-auto">
-        <SectionHeader index="06" title="Contact" />
+        <SectionHeader index="07" title="Contact" />
 
         <div className="grid md:grid-cols-2 gap-10">
           <motion.div

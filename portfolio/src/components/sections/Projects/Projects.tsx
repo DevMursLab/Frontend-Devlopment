@@ -18,9 +18,9 @@ export function Projects() {
     <section id="projects" className="px-6 py-24 bg-bg-surface">
       <div className="max-w-6xl mx-auto">
         <SectionHeader
-          index="03"
+          index="04"
           title="Projects"
-          subtitle="AI systems, full-stack apps, and automation pipelines — shipped and in progress."
+          subtitle="Eight complete systems across AI, full-stack engineering, automation, desktop software, and applied machine learning."
         />
 
         <ProjectFilter active={filter} onChange={setFilter} />

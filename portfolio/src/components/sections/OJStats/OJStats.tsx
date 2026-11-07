@@ -17,7 +17,7 @@ export function OJStats() {
   return (
     <section id="oj" className="px-6 py-24 bg-bg-surface">
       <div className="max-w-6xl mx-auto">
-        <SectionHeader index="05" title="Online Judge Stats" />
+        <SectionHeader index="06" title="Online Judge Stats" />
 
         <motion.div
           initial="hidden"

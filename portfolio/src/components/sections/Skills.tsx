@@ -7,7 +7,7 @@ export function Skills() {
   return (
     <section id="skills" className="px-6 py-24 bg-bg-void">
       <div className="max-w-6xl mx-auto">
-        <SectionHeader index="02" title="Skills" />
+        <SectionHeader index="03" title="Skills" />
 
         <div className="grid md:grid-cols-3 gap-10">
           {skillGroups.map((group) => (

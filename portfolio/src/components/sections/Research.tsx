@@ -1,81 +1,18 @@
 import { motion } from 'framer-motion'
-import { FileText } from 'lucide-react'
+import { ArrowUpRight, BookOpenCheck, ExternalLink, FlaskConical } from 'lucide-react'
 import { SectionHeader } from '../ui/SectionHeader'
-import { research, researchStats } from '../../data/research'
+import { researchStats, researchWorks, type ResearchStatus } from '../../data/research'
 import { fadeInUp } from '../../lib/motion'
 
-const pipeline = [
-  { title: 'Face Input', lines: ['LFW', 'Face Verification'] },
-  { title: 'Fingerprint Input', lines: ['SOCOFing', 'FVC2002/2004'] },
-  { title: 'Gated Fusion + Output', lines: ['Confidence-Gated', 'Transformer Fusion'] },
-]
+const statusStyles: Record<ResearchStatus, string> = {
+  'Editor assigned': 'border-sky-400/30 bg-sky-400/10 text-sky-300', 'Under peer review': 'border-violet-400/30 bg-violet-400/10 text-violet-300', 'With editor': 'border-amber-400/30 bg-amber-400/10 text-amber-300', 'Major revision submitted': 'border-emerald-400/30 bg-emerald-400/10 text-emerald-300', 'B.Sc. thesis': 'border-white/20 bg-white/5 text-text-secondary',
+}
 
 export function Research() {
-  return (
-    <section id="research" className="px-6 py-24 bg-bg-void">
-      <div className="max-w-6xl mx-auto">
-        <SectionHeader index="04" title="Research" />
-
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={fadeInUp}
-          className="glow-border rounded-xl bg-bg-card p-8"
-        >
-          <div className="flex items-center justify-between flex-wrap gap-2 mb-6">
-            <span className="flex items-center gap-2 font-mono text-sm text-text-secondary">
-              <FileText size={16} /> RESEARCH
-            </span>
-            <span className="font-mono text-xs px-3 py-1 rounded-full border border-accent-blue/40 bg-accent-blue/10 text-accent-blue">
-              Thesis
-            </span>
-          </div>
-
-          <h3 className="text-xl md:text-2xl font-bold text-text-primary leading-snug">
-            {research.title}
-          </h3>
-          <p className="text-text-secondary text-sm mt-3">{research.authors}</p>
-          <p className="text-text-muted text-sm">{research.affiliation}</p>
-          <p className="font-mono text-xs text-accent-blue mt-2">{research.status}</p>
-
-          <div className="grid sm:grid-cols-3 gap-4 mt-8">
-            {pipeline.map((step, i) => (
-              <div key={step.title} className="rounded-lg border border-white/10 bg-bg-void p-4">
-                <p className="font-mono text-xs text-text-muted mb-2">
-                  {i < pipeline.length - 1 ? `Stage ${i + 1}` : 'Output'}
-                </p>
-                <p className="font-mono text-sm text-text-primary">{step.title}</p>
-                {step.lines.map((l) => (
-                  <p key={l} className="font-mono text-xs text-text-secondary mt-1">
-                    {l}
-                  </p>
-                ))}
-              </div>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-5 gap-4 mt-8">
-            {researchStats.map((stat) => (
-              <div key={stat.label}>
-                <p className="font-mono text-xs text-text-muted">{stat.label}</p>
-                <p className="font-mono text-sm text-text-primary mt-1">{stat.value}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="flex gap-4 mt-8 font-mono text-sm">
-            <a
-              href={research.github}
-              target="_blank"
-              rel="noreferrer"
-              className="px-4 py-2 rounded-lg bg-accent-blue text-white hover:bg-accent-indigo transition-colors"
-            >
-              View on GitHub
-            </a>
-          </div>
-        </motion.div>
-      </div>
-    </section>
-  )
+  return <section id="research" className="px-6 py-24 bg-bg-void"><div className="max-w-6xl mx-auto">
+    <SectionHeader index="04" title="Research portfolio" subtitle="Trustworthy multimodal AI, clinical-data validity, and systems tested beyond a single benchmark." />
+    <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.25 }} variants={fadeInUp} className="rounded-2xl border border-accent-blue/25 bg-gradient-to-br from-accent-blue/10 via-bg-card to-bg-card p-6 md:p-8 mb-8"><div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6"><div className="max-w-3xl"><div className="flex items-center gap-2 font-mono text-xs tracking-widest text-accent-blue"><FlaskConical size={15} /> RESEARCH FOCUS</div><h3 className="text-2xl md:text-3xl font-bold text-text-primary mt-3">Does the model learn real signal—or a shortcut?</h3><p className="text-text-secondary leading-relaxed mt-3">My research evaluates AI reliability with ablations, cross-dataset transfer, fairness and explainability analysis, calibration, and leakage audits.</p></div><a href="#contact" className="inline-flex shrink-0 items-center gap-2 font-mono text-sm text-text-primary hover:text-accent-blue transition-colors">Discuss research collaboration <ArrowUpRight size={16} /></a></div><div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 pt-6 border-t border-white/10">{researchStats.map((stat) => <div key={stat.label}><p className="font-mono text-2xl font-bold text-text-primary">{stat.value}</p><p className="font-mono text-xs text-text-muted mt-1">{stat.label}</p></div>)}</div></motion.div>
+    <div className="grid md:grid-cols-2 gap-5">{researchWorks.map((work, index) => <motion.article key={work.title} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} variants={fadeInUp} transition={{ delay: (index % 2) * 0.06 }} className="glow-border group rounded-xl bg-bg-card p-6 flex flex-col"><div className="flex items-start justify-between gap-4 mb-4"><span className="font-mono text-xs text-text-muted">0{index + 1}</span><span className={`font-mono text-[10px] uppercase tracking-wide px-2.5 py-1 rounded-full border text-right ${statusStyles[work.status]}`}>{work.status}</span></div><h3 className="text-lg font-bold leading-snug text-text-primary group-hover:text-accent-blue transition-colors">{work.title}</h3><p className="font-mono text-xs text-accent-blue mt-3">{work.venue}</p><p className="text-sm text-text-secondary leading-relaxed mt-4">{work.contribution}</p><div className="mt-4 pt-4 border-t border-white/8 flex gap-3 text-sm text-text-secondary leading-relaxed"><BookOpenCheck className="shrink-0 text-accent-blue mt-0.5" size={16} /><span>{work.evidence}</span></div>{work.github && <a href={work.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-mono text-xs text-text-secondary hover:text-text-primary mt-5">View reproducible code <ExternalLink size={14} /></a>}</motion.article>)}</div>
+    <p className="text-text-muted text-xs leading-relaxed mt-7 max-w-3xl">Publication status is stated exactly as reported in the academic CV. These works are manuscripts or a thesis; no item is presented here as a published paper.</p>
+  </div></section>
 }

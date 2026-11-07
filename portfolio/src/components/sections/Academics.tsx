@@ -10,7 +10,7 @@ const results = [
   { label: 'HSC + SSC', value: '5.00', note: 'GPA 5.00 in both examinations' },
 ]
 
-const courses = ['Artificial Intelligence', 'Machine Learning', 'Data Science', 'Statistics', 'Deep Learning', 'Research Methodology']
+const courses = ['Artificial Intelligence', 'Machine Learning', 'Data Science', 'Statistics']
 
 const achievements = [
   { title: '9th Place · NeU Mymensingh Regional IUPC 2025', detail: 'Team leader · national inter-university programming contest', href: 'https://www.hackerrank.com/contests/neu-mymensingh-regional-iupc-2025/leaderboard' },

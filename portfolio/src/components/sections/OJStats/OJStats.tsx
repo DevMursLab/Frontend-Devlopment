@@ -3,6 +3,7 @@ import { Zap } from 'lucide-react'
 import { SectionHeader } from '../../ui/SectionHeader'
 import { CFCard } from './CFCard'
 import { LCCard } from './LCCard'
+import { CompetitiveProof } from './CompetitiveProof'
 import { ojProfiles, cpTopics } from '../../../data/ojProfiles'
 import { fadeInUp, staggerContainer } from '../../../lib/motion'
 
@@ -28,6 +29,10 @@ export function OJStats() {
           <motion.p variants={fadeInUp} className="flex items-center gap-2 font-mono text-sm text-text-secondary mb-6">
             <Zap size={16} className="text-accent-blue" /> Competitive Programming
           </motion.p>
+
+          <motion.div variants={fadeInUp}>
+            <CompetitiveProof />
+          </motion.div>
 
           <motion.div variants={fadeInUp} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             <CFCard />

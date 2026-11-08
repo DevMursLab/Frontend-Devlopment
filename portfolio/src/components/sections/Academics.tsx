@@ -21,8 +21,8 @@ const achievements = [
 ]
 
 const references = [
+  { name: 'Farida Siddiqi Prity', role: 'Lecturer, Department of CSE · Research Collaborator', email: 'prity@neu.ac.bd', profile: 'https://scholar.google.com/citations?user=SrIWrb4AAAAJ&hl=en' },
   { name: 'Md Shovon', role: 'Lecturer, Department of CSE · B.Sc. Thesis Supervisor', email: 'mdshovon@neu.ac.bd' },
-  { name: 'Farida Siddiqi Prity', role: 'Lecturer, Department of CSE · Research Collaborator', email: 'prity@neu.ac.bd' },
   { name: 'Abdullah Al Shiam', role: 'Assistant Professor, Department of CSE · Netrokona University · On Leave', email: 'shiam.cse@neu.ac.bd', profile: 'https://cse.neu.ac.bd/faculty/abdullah-al-shiam/' },
 ]
 

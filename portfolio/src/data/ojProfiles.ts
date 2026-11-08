@@ -5,8 +5,8 @@ export const ojProfiles = {
     apiUrl: 'https://codeforces.com/api/user.info?handles=itzzmursalin',
   },
   leetcode: {
-    handle: 'mdmursalin',
-    url: 'https://leetcode.com/mdmursalin/',
+    handle: 'Mursalin123',
+    url: 'https://leetcode.com/u/Mursalin123/',
   },
   codechef: {
     handle: 'shuoverflow202',
